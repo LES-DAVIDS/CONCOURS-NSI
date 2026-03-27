@@ -1,0 +1,4 @@
+liste des biblioteques :
+    Pygame
+    Pyxel
+    Random
