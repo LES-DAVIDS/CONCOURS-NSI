@@ -1,0 +1,34 @@
+
+    Fonctions utilitaires
+get_plateformes() — Retourne la liste des plateformes du niveau en cours (N1 ou N2).
+get_monde_larg() — Retourne la largeur du monde selon le niveau actuel.
+collision_plateformes() — Détecte et gère les collisions du joueur avec les plateformes : repositionne le joueur dessus s'il tombe et annule sa vitesse verticale.
+
+    Initialisation
+init_niveau_1() — Réinitialise toutes les variables du niveau 1 : position du joueur, du braconnier, caméra, projectiles, pommes, score et portail.
+init_niveau_2() — Réinitialise toutes les variables du niveau 2 : position du joueur, caméra, projectiles, et crée les monstres chapeaux à leurs positions initiales.
+
+    Fonctions de dessin (draw)
+dessiner_decor_n1() — Dessine le décor du niveau 1 : dégradé de ciel, Mont Fuji, bambous, sol carrelé et plateformes herbe/terre.
+dessiner_decor_n2() — Dessine le décor du niveau 2 : ciel nocturne, lune croissante, étoiles scintillantes, arbres sombres en parallaxe, brume au sol et plateformes sombres.
+dessiner_portail() — Dessine le portail animé en fin de niveau 1 : piliers, arche et tourbillon pulsant avec un texte clignotant.
+dessiner_joueur() — Dessine le sprite du joueur avec l'animation de marche ou de saut, gestion du flip horizontal selon la direction et clignotement pendant l'invincibilité.
+dessiner_braconnier() — Dessine le boss du niveau 1 avec orientation dynamique selon la position du joueur, clignotement d'invincibilité, animation de mort et barre de vie.
+dessiner_monstres() — Dessine tous les monstres chapeaux du niveau 2 avec flip directionnel, clignotement d'invincibilité, animation de mort et barre de vie individuelle.
+dessiner_griffes() — Dessine les projectiles griffes lancés par le joueur (avec flip selon la direction du tir).
+dessiner_balles() — Dessine les balles tirées par le braconnier sous forme de cercles concentriques colorés.
+dessiner_pommes() — Dessine les pommes de soin non encore ramassées sur le terrain.
+dessiner_hud() — Dessine l'interface tête haute : cœurs de vie (plein/vide), score, numéro de niveau et indication des contrôles.
+dessiner_titre() — Dessine l'écran titre avec le décor, le sprite du panda animé en bobbing, le titre et les instructions de jeu.
+dessiner_dialogue() — Dessine la scène de dialogue d'intro avec affichage caractère par caractère, boîte de dialogue et indicateur d'avancement.
+dessiner_fin() — Dessine l'écran de fin (victoire ou game over) avec le score final et l'invite à rejouer.
+
+    Fonctions de mise à jour (update)
+update_titre() — Gère l'écran titre : incrémente le compteur d'animation et lance la musique + transition vers les dialogues sur appui Espace/Entrée.
+update_dialogue() — Gère l'affichage progressif des dialogues d'intro, l'avancement au dialogue suivant sur Espace et la transition vers le jeu une fois tous les dialogues terminés.
+update_jeu() — Fonction principale du gameplay : gère les déplacements et sauts du joueur, la physique (gravité), les collisions, le tir de griffes, la caméra, la collecte de pommes, et délègue la logique ennemie selon le niveau (braconnier N1 ou monstres N2) avec toutes les détections de collision joueur/ennemi/projectile et les transitions d'état (victoire, game over, passage au niveau 2).
+update_fin() — Gère l'écran de fin : sur appui de R, réinitialise le niveau actuel et relance la musique.
+
+    Boucles principales Pyxel
+update() — Point d'entrée de la logique : redirige vers la fonction update correspondant à l'état actuel du jeu (titre, dialogue, jeu, victoire/game_over).
+draw() — Point d'entrée du rendu : efface l'écran et redirige vers les fonctions de dessin selon l'état et le niveau actuel.
