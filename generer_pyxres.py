@@ -1,3 +1,8 @@
+# -----------------------------------------------
+# #Projet : Kung-Fu PandaRoux
+#Auteurs : Maxence Andrivon, Hugo Dupuis, Anais Najac, Come de La Serre
+# -----------------------------------------------
+
 """
 generer_pyxres.py - Lance UNE SEULE FOIS pour créer le nsi.pyxres amélioré
 """
