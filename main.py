@@ -1,3 +1,9 @@
+# -----------------------------------------------
+# #Projet : Kung-Fu PandaRoux
+#Auteurs : Maxence Andrivon, Hugo Dupuis, Anais Najac, Come de La Serre
+# -----------------------------------------------
+
+
 import pyxel
 import pygame
 import random
